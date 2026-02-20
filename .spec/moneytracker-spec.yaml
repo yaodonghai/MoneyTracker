@@ -1,49 +1,69 @@
-# MoneyTracker Project Specification
+# 开发规范
 
-## Project Overview
-MoneyTracker is an iOS application designed to help users manage their finances effectively. The app provides features for tracking income, expenses, and generating financial reports.
+## 命名约定
+- 变量和函数名称使用小写字母和下划线。
+- 类名称使用帕斯卡命名法。
 
-## Features
-- **User Authentication:** Users can sign up and log in securely.
-- **Expense Tracking:** Users can add, edit, and delete expenses with categories.
-- **Income Tracking:** Users can log income sources and amounts.
-- **Budgeting Tools:** Users can set budgets for various categories and track progress.
-- **Reports:** Generate visual reports of spending habits over different periods.
-- **Notifications:** Alerts for bill due dates and budget limits.
+## 代码风格
+- 每行代码应不超过80个字符。
+- 使用四个空格进行缩进，不使用制表符。
 
-## Technical Specifications
-- **Platform:** iOS
-- **Programming Language:** Swift
-- **Frameworks Used:** UIKit, CoreData, SwiftUI, Combine
-- **Deployment Target:** iOS 14.0+
+## 项目结构
+- 按照功能模块组织代码。
+- 每个模块应有独立的目录。
 
-## Design Specifications
-- **UI/UX:** Follow Apple’s Human Interface Guidelines for a seamless user experience.
-- **Color Scheme:** Use a clean and professional color palette; consider accessibility in color choices.
+## 架构
+- 使用MVC架构进行项目设计。
+- 关注可扩展性和可维护性。
 
-## Database Structure
-- **Entities:** User, Expense, Income, Budget
-- **Relationships:** One-to-many relationships between User and Expense/Income/Budget entities.
+## 安全性
+- 对用户输入进行验证和清理。
+- 定期进行安全审计。
 
-## APIs
-- Local storage using Core Data.
-- Possible integration with third-party financial APIs for real-time data (if needed).
+## 数据库设计
+- 使用范式来设计数据库。
+- 记录数据库版本。
 
-## Testing Strategy
-- Unit testing for individual components using XCTest.
-- UI testing to ensure user interactions work as expected.
+## UI/UX
+- 提供清晰的用户界面设计指南。
+- 确保一致的用户体验。
 
-## Future Enhancements
-- Implement payment integration for direct bill payments.
-- Add support for multiple currencies.
-- Develop a web version of the application.
+## 功能
+- 列出所有关键功能及其实现描述。
+- 设置优先级。
 
-## Project Management
-- **Repository:** GitHub - yaodonghai/MoneyTracker
-- **Issue Tracking:** GitHub Issues
-- **Task Management:** GitHub Projects or external tools (Jira, Trello, etc.)
+## 测试
+- 编写单元测试和集成测试。
+- 每次更改代码后运行测试。
 
----
+## 性能
+- 监控应用性能。
+- 尽量减少页面加载时间。
 
-## Conclusion
-This specification file serves as a guideline for the development of the MoneyTracker project, detailing the core functionalities and design principles that guide the application’s development.
+## 错误处理
+- 统一错误处理机制。
+- 提供用户友好的错误消息。
+
+## 本地化
+- 支持多语言和国际化。
+- 提供翻译文件。
+
+## 版本控制
+- 使用语义化版本命名。
+- 对每次提交进行说明。
+
+## 发布管理
+- 制定发布计划。
+- 持续集成和持续交付。
+
+## 工具
+- 使用标准化的开发工具和库。
+- 定期更新工具。
+
+## 最佳实践
+- 代码审查和配对编程。
+- 保持文档更新。
+
+## 常见陷阱
+- 不要忽略代码可读性。
+- 小心处理依赖关系。
