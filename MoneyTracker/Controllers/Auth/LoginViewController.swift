@@ -113,6 +113,7 @@ final class LoginViewController: UIViewController {
 
         if UserSession.shared.login(username: username, password: password) {
             KeychainHelper.lastUsername = username
+            // lastUserId 已在 switchToUser 中自动保存
             showMainApp()
         } else {
             messageLabel.text = "用户名或密码错误"

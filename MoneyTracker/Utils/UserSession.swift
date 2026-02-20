@@ -69,6 +69,27 @@ final class UserSession {
         transactionDAO = TransactionDAO(database: db, userId: user.id)
         categoryDAO?.ensureDefaultCategories()
         ensureDefaultAccounts()
+        
+        // 保存最后登录的用户ID
+        KeychainHelper.lastUserId = user.id
+    }
+    
+    /// 根据用户ID自动登录（用于启动时恢复会话）
+    func autoLogin(userId: Int64) -> Bool {
+        guard let globalDb = DatabaseManager.shared.openGlobalDatabase() else { return false }
+        let userDao = UserDAO(database: globalDb)
+        
+        // 查找用户
+        let allUsers = userDao.allUsers()
+        guard let user = allUsers.first(where: { $0.id == userId }) else {
+            // 用户不存在，清除保存的ID
+            KeychainHelper.lastUserId = nil
+            return false
+        }
+        
+        // 切换到该用户
+        switchToUser(user)
+        return true
     }
 
     private func ensureDefaultAccounts() {
@@ -87,6 +108,7 @@ final class UserSession {
         categoryDAO = nil
         transactionDAO = nil
         currentUser = nil
+        // 注意：不清除 lastUserId，以便下次自动登录
     }
 
     var isLoggedIn: Bool { currentUser != nil }

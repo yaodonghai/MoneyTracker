@@ -141,6 +141,32 @@ final class AddTransactionViewController: UIViewController {
         dateButton.addTarget(self, action: #selector(pickDate), for: .touchUpInside)
         saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupDefaultSelections()
+    }
+    
+    /// 设置默认分类和账户
+    private func setupDefaultSelections() {
+        // 设置默认分类（第一个分类）
+        if selectedCategoryId == nil {
+            let categories = UserSession.shared.categoryDAO?.all(type: isIncome ? "income" : "expense") ?? []
+            if let firstCategory = categories.first {
+                selectedCategoryId = firstCategory.id
+                categoryButton.setTitle(firstCategory.name, for: .normal)
+            }
+        }
+        
+        // 设置默认账户（第一个账户）
+        if selectedAccountId == nil {
+            let accounts = UserSession.shared.accountDAO?.all() ?? []
+            if let firstAccount = accounts.first {
+                selectedAccountId = firstAccount.id
+                accountButton.setTitle("\(firstAccount.name)  \(String(format: "%.2f", firstAccount.balance))", for: .normal)
+            }
+        }
+    }
 
     private func buildNumPad() {
         let row1 = ["1", "2", "3"]
@@ -199,7 +225,8 @@ final class AddTransactionViewController: UIViewController {
     @objc private func segmentChanged() {
         isIncome = segment.selectedSegmentIndex == 1
         selectedCategoryId = nil
-        categoryButton.setTitle("选择分类", for: .normal)
+        // 切换类型后重新设置默认分类
+        setupDefaultSelections()
     }
 
     @objc private func cancel() {

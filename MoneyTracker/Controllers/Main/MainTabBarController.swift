@@ -12,6 +12,7 @@ final class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         tabBar.backgroundColor = ColorTheme.cardBackground
         tabBar.tintColor = ColorTheme.primary
+        tabBar.unselectedItemTintColor = ColorTheme.textSecondary  // 未选中状态颜色
 
         let home = HomeViewController()
         home.tabBarItem = UITabBarItem(title: "首页", image: nil, tag: 0)

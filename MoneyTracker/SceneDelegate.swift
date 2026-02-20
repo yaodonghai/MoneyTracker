@@ -15,7 +15,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UserSession.shared.isLoggedIn ? MainTabBarController() : LoginViewController()
+        
+        // 尝试自动登录
+        if let lastUserId = KeychainHelper.lastUserId {
+            if UserSession.shared.autoLogin(userId: lastUserId) {
+                // 自动登录成功，直接进入主界面
+                window?.rootViewController = MainTabBarController()
+            } else {
+                // 自动登录失败，显示登录页面
+                window?.rootViewController = LoginViewController()
+            }
+        } else {
+            // 没有保存的用户，显示登录页面
+            window?.rootViewController = LoginViewController()
+        }
+        
         window?.makeKeyAndVisible()
     }
 
