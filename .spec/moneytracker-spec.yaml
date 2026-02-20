@@ -1,69 +1,43 @@
-# 开发规范
+# MoneyTracker Development Specifications  
 
-## 命名约定
-- 变量和函数名称使用小写字母和下划线。
-- 类名称使用帕斯卡命名法。
+## Project Tool Libraries  
+This section outlines the project tool libraries utilized within the MoneyTracker application.  
+  
+### 1. ColorTheme  
+This library is used for consistent color applications throughout the application. It supports the following features:  
+- Customizable colors for various themes  
+- Supports light and dark modes  
 
-## 代码风格
-- 每行代码应不超过80个字符。
-- 使用四个空格进行缩进，不使用制表符。
+### 2. FontManager  
+FontManager handles font styles and sizes for different text components. Key features include:  
+- Dynamic font sizing for accessibility  
+- Easy switching between font styles  
 
-## 项目结构
-- 按照功能模块组织代码。
-- 每个模块应有独立的目录。
+### 3. Spacing  
+The Spacing library standardizes the spacing around UI components, ensuring a uniform look. Features include:  
+- Pre-defined spacing values  
+- Support for responsive design  
 
-## 架构
-- 使用MVC架构进行项目设计。
-- 关注可扩展性和可维护性。
+### 4. ShadowHelper  
+ShadowHelper provides shadows for UI components, enhancing the visual hierarchy. Key aspects:  
+- Customizable shadow properties  
+- Easy application to components  
 
-## 安全性
-- 对用户输入进行验证和清理。
-- 定期进行安全审计。
+### 5. ValidationHelper  
+This library is essential for input validation across forms. It includes:  
+- Pre-built validation rules  
+- Easy integration with form components  
 
-## 数据库设计
-- 使用范式来设计数据库。
-- 记录数据库版本。
+### 6. FormatterHelper  
+FormatterHelper assists in formatting data for display purposes. Features include:  
+- Date and currency formatting  
+- Custom formatting options  
 
-## UI/UX
-- 提供清晰的用户界面设计指南。
-- 确保一致的用户体验。
+## Copilot Integration  
+The MoneyTracker project integrates with Copilot to enhance development productivity.  
+Key benefits include:  
+- Code suggestions based on context  
+- Rapid error reduction through intelligent prompts  
 
-## 功能
-- 列出所有关键功能及其实现描述。
-- 设置优先级。
-
-## 测试
-- 编写单元测试和集成测试。
-- 每次更改代码后运行测试。
-
-## 性能
-- 监控应用性能。
-- 尽量减少页面加载时间。
-
-## 错误处理
-- 统一错误处理机制。
-- 提供用户友好的错误消息。
-
-## 本地化
-- 支持多语言和国际化。
-- 提供翻译文件。
-
-## 版本控制
-- 使用语义化版本命名。
-- 对每次提交进行说明。
-
-## 发布管理
-- 制定发布计划。
-- 持续集成和持续交付。
-
-## 工具
-- 使用标准化的开发工具和库。
-- 定期更新工具。
-
-## 最佳实践
-- 代码审查和配对编程。
-- 保持文档更新。
-
-## 常见陷阱
-- 不要忽略代码可读性。
-- 小心处理依赖关系。
+### Conclusion  
+These specifications ensure that the MoneyTracker application is built with a focus on usability, accessibility, and maintainability, while leveraging modern development resources efficiently.
