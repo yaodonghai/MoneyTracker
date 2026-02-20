@@ -1,0 +1,49 @@
+# MoneyTracker Project Specification
+
+## Project Overview
+MoneyTracker is an iOS application designed to help users manage their finances effectively. The app provides features for tracking income, expenses, and generating financial reports.
+
+## Features
+- **User Authentication:** Users can sign up and log in securely.
+- **Expense Tracking:** Users can add, edit, and delete expenses with categories.
+- **Income Tracking:** Users can log income sources and amounts.
+- **Budgeting Tools:** Users can set budgets for various categories and track progress.
+- **Reports:** Generate visual reports of spending habits over different periods.
+- **Notifications:** Alerts for bill due dates and budget limits.
+
+## Technical Specifications
+- **Platform:** iOS
+- **Programming Language:** Swift
+- **Frameworks Used:** UIKit, CoreData, SwiftUI, Combine
+- **Deployment Target:** iOS 14.0+
+
+## Design Specifications
+- **UI/UX:** Follow Apple’s Human Interface Guidelines for a seamless user experience.
+- **Color Scheme:** Use a clean and professional color palette; consider accessibility in color choices.
+
+## Database Structure
+- **Entities:** User, Expense, Income, Budget
+- **Relationships:** One-to-many relationships between User and Expense/Income/Budget entities.
+
+## APIs
+- Local storage using Core Data.
+- Possible integration with third-party financial APIs for real-time data (if needed).
+
+## Testing Strategy
+- Unit testing for individual components using XCTest.
+- UI testing to ensure user interactions work as expected.
+
+## Future Enhancements
+- Implement payment integration for direct bill payments.
+- Add support for multiple currencies.
+- Develop a web version of the application.
+
+## Project Management
+- **Repository:** GitHub - yaodonghai/MoneyTracker
+- **Issue Tracking:** GitHub Issues
+- **Task Management:** GitHub Projects or external tools (Jira, Trello, etc.)
+
+---
+
+## Conclusion
+This specification file serves as a guideline for the development of the MoneyTracker project, detailing the core functionalities and design principles that guide the application’s development.
