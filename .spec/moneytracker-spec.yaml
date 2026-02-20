@@ -1,16 +1,67 @@
----
-开发规范:
-  - 颜色主题: ColorTheme.swift
-    描述: 此模块用于管理应用程序的颜色主题，确保一致的视觉效果。
-    
-  - 字体管理: FontManager.swift
-    描述: 负责管理和配置应用程序中使用的所有字体，确保可读性和一致性。
+# 钱包追踪器开发规范
 
-  - 日期助手: DateHelper.swift
-    描述: 提供日期和时间的处理和格式化功能，简化日期操作。
+## 1. 工具库
+以下是项目中使用的五个工具库的详细说明：
 
-  - 用户会话: UserSession.swift
-    描述: 管理用户的会话信息，包括登录状态和用户数据。
+### 1.1 ColorTheme
+- **描述**: 处理应用程序的颜色主题，包括主色、辅助色、背景色等。
+- **用法**:
+  - `ColorTheme.getPrimaryColor()` 获取主色。
+  - `ColorTheme.getAccentColor()` 获取辅助色。
 
-  - 密钥链助手: KeychainHelper.swift
-    描述: 用于安全存储和访问敏感信息，如密码和用户凭证。
+### 1.2 FontManager
+- **描述**: 管理应用程序的字体样式和大小。
+- **用法**:
+  - `FontManager.setFontSize(size)` 设置字体大小。
+  - `FontManager.getFont()` 获取当前字体。
+
+### 1.3 DateHelper
+- **描述**: 日期处理工具，提供格式化、比较等功能。
+- **用法**:
+  - `DateHelper.formatDate(date, format)` 格式化日期。
+  - `DateHelper.compareDates(date1, date2)` 比较两个日期。
+
+### 1.4 UserSession
+- **描述**: 管理用户会话和登录状态。
+- **用法**:
+  - `UserSession.startSession(user)` 开始用户会话。
+  - `UserSession.endSession()` 结束用户会话。
+
+### 1.5 KeychainHelper
+- **描述**: 安全��储用户凭证和敏感信息。
+- **用法**:
+  - `KeychainHelper.store(key, value)` 存储敏感信息。
+  - `KeychainHelper.retrieve(key)` 获取存储的信息。
+
+## 2. Copilot 使用指南
+以下是使用 Copilot 的详细指南，包括代码生成模板：
+
+### 2.1 代码生成模板
+- **函数模板**:
+```javascript
+function exampleFunction(param1, param2) {
+    // TODO: 代码逻辑
+}
+```
+- **类模板**:
+```javascript
+class Example {
+    constructor() {
+        // TODO: 初始化
+    }
+    exampleMethod() {
+        // TODO: 方法逻辑
+    }
+}
+```
+### 2.2 操作步骤
+1. 打开代码编辑器并确保 Copilot 已启用。
+2. 输入函数名称，Copilot 将提供建议。
+3. 如果建议不符合需求，可以逐步修改并使用 Copilot 的提示。
+
+## 3. 开发最佳实践
+- **确保代码可读性**: 使用有意义的命名和适当的注释。
+- **定期重构**: 关注代码的可维护性和性能。
+- **使用版本控制**: 确保每次更改都有记录。
+
+请根据项目需求不断更新和完善上述规范。
