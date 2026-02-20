@@ -36,7 +36,8 @@ final class AddTransactionViewController: UIViewController {
         let b = UIButton(type: .system)
         b.setTitle("选择分类", for: .normal)
         b.contentHorizontalAlignment = .left
-        b.setTitleColor(ColorTheme.textPrimary, for: .normal)
+        b.setTitleColor(.systemGreen, for: .normal)
+        b.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         return b
     }()
 
@@ -44,7 +45,8 @@ final class AddTransactionViewController: UIViewController {
         let b = UIButton(type: .system)
         b.setTitle("选择账户", for: .normal)
         b.contentHorizontalAlignment = .left
-        b.setTitleColor(ColorTheme.textPrimary, for: .normal)
+        b.setTitleColor(.systemGreen, for: .normal)
+        b.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         return b
     }()
 
