@@ -1,43 +1,16 @@
-# MoneyTracker Development Specifications  
+---
+开发规范:
+  - 颜色主题: ColorTheme.swift
+    描述: 此模块用于管理应用程序的颜色主题，确保一致的视觉效果。
+    
+  - 字体管理: FontManager.swift
+    描述: 负责管理和配置应用程序中使用的所有字体，确保可读性和一致性。
 
-## Project Tool Libraries  
-This section outlines the project tool libraries utilized within the MoneyTracker application.  
-  
-### 1. ColorTheme  
-This library is used for consistent color applications throughout the application. It supports the following features:  
-- Customizable colors for various themes  
-- Supports light and dark modes  
+  - 日期助手: DateHelper.swift
+    描述: 提供日期和时间的处理和格式化功能，简化日期操作。
 
-### 2. FontManager  
-FontManager handles font styles and sizes for different text components. Key features include:  
-- Dynamic font sizing for accessibility  
-- Easy switching between font styles  
+  - 用户会话: UserSession.swift
+    描述: 管理用户的会话信息，包括登录状态和用户数据。
 
-### 3. Spacing  
-The Spacing library standardizes the spacing around UI components, ensuring a uniform look. Features include:  
-- Pre-defined spacing values  
-- Support for responsive design  
-
-### 4. ShadowHelper  
-ShadowHelper provides shadows for UI components, enhancing the visual hierarchy. Key aspects:  
-- Customizable shadow properties  
-- Easy application to components  
-
-### 5. ValidationHelper  
-This library is essential for input validation across forms. It includes:  
-- Pre-built validation rules  
-- Easy integration with form components  
-
-### 6. FormatterHelper  
-FormatterHelper assists in formatting data for display purposes. Features include:  
-- Date and currency formatting  
-- Custom formatting options  
-
-## Copilot Integration  
-The MoneyTracker project integrates with Copilot to enhance development productivity.  
-Key benefits include:  
-- Code suggestions based on context  
-- Rapid error reduction through intelligent prompts  
-
-### Conclusion  
-These specifications ensure that the MoneyTracker application is built with a focus on usability, accessibility, and maintainability, while leveraging modern development resources efficiently.
+  - 密钥链助手: KeychainHelper.swift
+    描述: 用于安全存储和访问敏感信息，如密码和用户凭证。
